@@ -37,7 +37,7 @@ script {
                         withDockerRegistry([credentialsId:DOCKER_CREDENTIALS_ID, url: "https://index.docker.io/v1/"]) {
                             sh """
                             docker tag ${DOCKER_IMAGE}:${BUILD_NUMBER} vigneshbalajiee/prod:${BUILD_NUMBER}
-                            docker push ${DOCKER_PROD_REPO}/${DOCKER_IMAGE}:${env.BUILD_ID}
+                            docker push vigneshbalajiee/prod:${BUILD_NUMBER}
                             docker compose -f docker-compose_prod.yml up -d
                             """
                         }
@@ -46,7 +46,7 @@ script {
                         withDockerRegistry([credentialsId:DOCKER_CREDENTIALS_ID, url: "https://index.docker.io/v1/"]) {
                             sh """
                             docker tag ${DOCKER_IMAGE}:${BUILD_NUMBER} vigneshbalajiee/dev:${BUILD_NUMBER}
-                            docker push ${DOCKER_DEV_REPO}/${DOCKER_IMAGE}:${env.BUILD_ID}
+                            docker push vigneshbalajiee/dev:${BUILD_NUMBER}
                             docker compose -f docker-compose_dev.yml up -d
                             """
                         }
