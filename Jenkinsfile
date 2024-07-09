@@ -12,6 +12,7 @@ pipeline{
                 script{
                 echo 'Building the image.'
                 sh 'chmod +x build.sh'
+                sh 'ls -l'
                 sh './build.sh'
                 }
             }
