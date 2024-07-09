@@ -5,7 +5,7 @@ pipeline{
     environment {
         DOCKER_REPO="https://hub.docker.com/"
         DOCKER_IMAGE = "Reactapp"
-        DOCKER_CREDENTIALS_ID = $Docker
+        DOCKER_CREDENTIALS_ID = "$Docker"
     }
 
 
