@@ -36,8 +36,8 @@ script {
                         echo "Pushing Docker image to production repository..."
                         withDockerRegistry([credentialsId:DOCKER_CREDENTIALS_ID, url: "https://index.docker.io/v1/"]) {
                             sh """
-                            docker tag ${DOCKER_IMAGE}:${BUILD_NUMBER} vigneshbalajiee/prod:${BUILD_NUMBER}
-                            docker push vigneshbalajiee/prod:${BUILD_NUMBER}
+                            docker tag ${DOCKER_IMAGE}:${BUILD_NUMBER} vigneshbalajiee/prod
+                            ./deployprod.sh
                             docker compose -f docker-compose_prod.yml up -d
                             """
                         }
@@ -45,8 +45,8 @@ script {
                         echo "Pushing Docker image to development repository..."
                         withDockerRegistry([credentialsId:DOCKER_CREDENTIALS_ID, url: "https://index.docker.io/v1/"]) {
                             sh """
-                            docker tag ${DOCKER_IMAGE}:${BUILD_NUMBER} vigneshbalajiee/dev:${BUILD_NUMBER}
-                            docker push vigneshbalajiee/dev:${BUILD_NUMBER}
+                            docker tag ${DOCKER_IMAGE}:${BUILD_NUMBER} vigneshbalajiee/dev
+                            ./deploydev.sh
                             docker compose -f docker-compose_dev.yml up -d
                             """
                         }
