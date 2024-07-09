@@ -1,6 +1,6 @@
 pipeline{ 
     
-    agent none  
+    agent Master
 
     environment {
         DOCKER_REPO="https://hub.docker.com"
@@ -26,7 +26,7 @@ pipeline{
             }
         }
        stage('Push Docker Image') {
-            agent { label 'Slave' }  // Define agent for this stage
+            agent { label 'Master' }  // Define agent for this stage
             steps {
 script {
                     def lastCommit = sh(script: "git log -1 --pretty=%H", returnStdout: true).trim()
