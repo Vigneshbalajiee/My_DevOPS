@@ -1,3 +1,3 @@
 #! /bin/bash
 echo "creating image using dockerfile"
-docker build . -t reactapp:${env.BUILD_NUMBER}
+docker build . -t reactapp:${BUILD_NUMBER}
