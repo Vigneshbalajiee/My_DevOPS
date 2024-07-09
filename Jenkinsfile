@@ -43,7 +43,7 @@ script {
                         }
                     } else {
                         echo "Pushing Docker image to development repository..."
-                        withDockerRegistry([credentialsId:DOCKER_CREDENTIALS_ID, url: DOCKER_REPO]) {
+                        withDockerRegistry([credentialsId:DOCKER_CREDENTIALS_ID, url: "https://hub.docker.com"]) {
                             sh """
                             docker tag ${DOCKER_IMAGE}:${BUILD_NUMBER} vigneshbalajiee/dev:${BUILD_NUMBER}
                             docker push ${DOCKER_DEV_REPO}/${DOCKER_IMAGE}:${env.BUILD_ID}
