@@ -5,7 +5,7 @@ pipeline {
          stage('Checkout') {
             steps {
                 echo 'Pulling the files from Github.'
-                git branch:'Dev',url:'https://github.com/Vigneshbalajiee/Capstone.git'
+                checkout scmGit(branches: [[name: 'Dev']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Vigneshbalajiee/Capstone.git']])
                 
             }
         }
