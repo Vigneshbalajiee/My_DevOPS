@@ -13,7 +13,8 @@ pipeline{
                 echo 'Building the image.'
                 sh 'chmod +x build.sh'
                 sh 'ls -l'
-                sh './build.sh'
+                sh 'echo "creating image using dockerfile'
+                sh 'docker build . -t reactapp'
                 }
             }
         }
