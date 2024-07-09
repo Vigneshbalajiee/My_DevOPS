@@ -34,7 +34,7 @@ script {
                     
                     if (lastCommit == mergeBase) {
                         echo "Pushing Docker image to production repository..."
-                        withDockerRegistry([credentialsId: DOCKER_CREDENTIALS_ID, url: ${DOCKER_REPO}]) {
+                        withDockerRegistry([credentialsId:$DOCKER_CREDENTIALS_ID, url: ${DOCKER_REPO}]) {
                             sh """
                             docker tag ${DOCKER_IMAGE}:${BUILD_NUMBER} vigneshbalajiee/prod:${BUILD_NUMBER}
                             docker push ${DOCKER_PROD_REPO}/${DOCKER_IMAGE}:${env.BUILD_ID}
@@ -43,7 +43,7 @@ script {
                         }
                     } else {
                         echo "Pushing Docker image to development repository..."
-                        withDockerRegistry([credentialsId: DOCKER_CREDENTIALS_ID, url: ${DOCKER_REPO}]) {
+                        withDockerRegistry([credentialsId:$DOCKER_CREDENTIALS_ID, url: ${DOCKER_REPO}]) {
                             sh """
                             docker tag ${DOCKER_IMAGE}:${BUILD_NUMBER} vigneshbalajiee/dev:${BUILD_NUMBER}
                             docker push ${DOCKER_DEV_REPO}/${DOCKER_IMAGE}:${env.BUILD_ID}
