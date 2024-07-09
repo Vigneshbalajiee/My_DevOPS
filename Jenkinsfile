@@ -11,9 +11,6 @@ pipeline{
             steps{
                 script{
                 echo 'Building the image.'
-                sh 'chmod +x build.sh'
-                sh 'ls -l'
-                sh 'echo "creating image using dockerfile'
                 sh 'docker build . -t reactapp'
                 }
             }
