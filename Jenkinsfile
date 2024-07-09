@@ -9,7 +9,9 @@ pipeline{
         }
         stage('Build'){
             steps{
+                script{
                 echo 'Building the image.'
+                sh ./build.sh}
             }
         }
     }
