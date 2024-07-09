@@ -11,11 +11,13 @@ pipeline{
 
     stages {
         stage('Checkout'){
+           agent { label 'Master' }  
             steps{
                 checkout scmGit(branches: [[name: 'Dev']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Vigneshbalajiee/Capstone.git']])
             }
         }
         stage('Build'){
+            agent { label 'Master' }
             steps{
                 script{
                 echo 'Building the image.'
