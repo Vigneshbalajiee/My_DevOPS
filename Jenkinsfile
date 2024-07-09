@@ -1,6 +1,6 @@
 pipeline{ 
     
-    agent Master
+    agent none
 
     environment {
         DOCKER_REPO="https://hub.docker.com"
