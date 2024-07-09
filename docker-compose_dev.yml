@@ -2,6 +2,6 @@
 services:
    Reactapp:
       container_name: Reactapp
-      image: vigneshbalajiee/dev
+      image: vigneshbalajiee/dev:$(BUILD_NUMBER)
       ports:
        - "80:80"
