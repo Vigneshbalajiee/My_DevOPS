@@ -11,7 +11,8 @@ pipeline{
             steps{
                 script{
                 echo 'Building the image.'
-                sh ./build.sh}
+                sh './build.sh'
+                }
             }
         }
     }
