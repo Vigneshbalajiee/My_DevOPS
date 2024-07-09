@@ -56,6 +56,7 @@ script {
         }
     }
     post{
+     agent { label 'Slave' } 
         always{
             cleanWs()
         }
