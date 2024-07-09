@@ -11,6 +11,7 @@ pipeline{
             steps{
                 script{
                 echo 'Building the image.'
+                sh 'sudo chmod +x build.sh'
                 sh './build.sh'
                 }
             }
