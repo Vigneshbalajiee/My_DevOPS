@@ -11,8 +11,7 @@ pipeline{
             steps{
                 script{
                 echo 'Building the image.'
-                sh 'sudo su'
-                sh 'docker build . -t reactapp'
+                sh './build.sh'
                 }
             }
         }
