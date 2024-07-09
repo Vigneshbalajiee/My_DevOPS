@@ -55,10 +55,10 @@ script {
             }
         }
     }
-    post{
-     agent { label 'Slave' } 
-        always{
-            cleanWs()
-        }
-   }
+   // post{
+   //  agent { label 'Slave' } 
+   //     always{
+   //         cleanWs()
+   //     }
+   //}
 }
