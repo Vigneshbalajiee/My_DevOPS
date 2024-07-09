@@ -12,7 +12,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the image.'
-                sh ./build.sh
+            
                 
             }
         }
