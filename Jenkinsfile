@@ -13,7 +13,7 @@ pipeline{
         stage('Checkout'){
            agent { label 'Master' }  
             steps{
-                checkout scmGit(branches: [[name: 'Dev']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Vigneshbalajiee/Capstone.git']])
+                checkout scmGit(branches: [[name: 'Dev'], [name: 'main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Vigneshbalajiee/Capstone.git']])
             }
         }
         stage('Build'){
