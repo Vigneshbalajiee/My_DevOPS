@@ -28,9 +28,9 @@ pipeline{
        stage('Push Docker Image') {
             agent { label 'Master' }  // Define agent for this stage
             steps {
-              script {
-                  def lastCommitDev = sh(script: "git log -1 --pretty=%H origin/Dev", returnStdout: true).trim()
-                  def isMerged = sh(script: "git merge-base --is-ancestor ${lastCommitDev} origin/main && echo true || echo false", returnStdout: true).trim()
+                  script {
+                      def lastCommitDev = sh(script: "git log -1 --pretty=%H origin/Dev", returnStdout: true).trim()
+                    def isMerged = sh(script: "git merge-base --is-ancestor ${lastCommitDev} origin/main && echo true || echo false", returnStdout: true).trim()
                     
                     if (isMerged == "true") {
                         echo "Pushing Docker image to production repository..."
