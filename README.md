@@ -38,9 +38,9 @@ Jenkinsfile is a textfile defines the configuration of a Jenkins pipeline and wr
 I have given 3 stage checkout (to checkout files from github), Build (to build the image) and push the images ( to push the image to docker hub repository ). The condition is to push the image to Dev repo normally and when the main and Dev branches merged then it shoould push to Prod repository in docker hub.
 for that I used the condition 
 
-   `def lastCommitDev = sh(script: "git log -1 --pretty=%H origin/Dev", returnStdout: true).trim()` - to get the last commit hash
-   `def isMerged = sh(script: "git merge-base --is-ancestor ${lastCommitDev} origin/main && echo true || echo false", returnStdout: true).trim()` -- if Dev merged with main last commit of Dev added to main and also new commitid will create. So, Dev's last commit is the ancestor of currrent main branch head.
-   `if (isMerged == "true")`
+-   `def lastCommitDev = sh(script: "git log -1 --pretty=%H origin/Dev", returnStdout: true).trim()` - to get the last commit hash
+ -  `def isMerged = sh(script: "git merge-base --is-ancestor ${lastCommitDev} origin/main && echo true || echo false", returnStdout: true).trim()` -- if Dev merged with main last commit of Dev added to main and also new commitid will create. So, Dev's last commit is the ancestor of currrent main branch head.
+  - `if (isMerged == "true")`
 
 if this satisfies then merge happend so the image pushed to Prod repo in dockerhub. else it will pushed to dev repo. After that using docker-compose file to run the container by pulling the image from respective repo based on above condition.
 
