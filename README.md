@@ -12,10 +12,10 @@ Tools used for this projects are
    AWS EC2 instance to deploy the container
    Prometheus for monitoring.
 *******************************************************************************************************
-Deployed application site : `http://15.206.124.180/`
-Jenkins site: `http://15.206.124.180:8080/job/Capstone/`
-image_dev : `vigneshbalajiee/dev:latest`
-image_prod: `vigneshbalajiee/prod:latest`
+- **Deployed application site **: `http://15.206.124.180/`
+- **Jenkins site**: `http://15.206.124.180:8080/job/Capstone/`
+- **image_dev** : `vigneshbalajiee/dev:latest`
+- **image_prod**: `vigneshbalajiee/prod:latest`
 *******************************************************************************************************
 ## Execution:
 
