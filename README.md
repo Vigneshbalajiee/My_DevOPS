@@ -21,7 +21,7 @@ Tools used for this projects are
 
 First, created the AWS Ec2 instance named Jenkins and connected Via MOBAXTERM. Install necessary applications like Docker, Git, Jenkins, Java to run Jenkins. Then, Clone the project from the given github repo and created the "Dev" Branch from "main". Then created and added below files. 
 
-Dockerfile - set of instructions (steps and command) to build the image. It contains necessary configurations needed for the application to run.
+**Dockerfile** - set of instructions (steps and command) to build the image. It contains necessary configurations needed for the application to run.
 Jenkinsfile - to create a Jenkins pipeline.
 alert_rules.yml - for setting Prometheus alert rules
 build.sh - script to build the image
