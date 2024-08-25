@@ -1,4 +1,3 @@
-```
 data "aws_ami" "aws_ami" {
   most_recent = true
   owners = ["amazon"]
