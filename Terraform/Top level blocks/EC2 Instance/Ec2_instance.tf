@@ -15,7 +15,7 @@ provider "aws" {
 resource "aws_instance" "EC2_instance" {
      ami = data.aws_ami.aws_ami.id
      instance_type = var.ec2_type
-     vpc_security_group_ids = ["aws_security_group.my-SG.id"]
+     vpc_security_group_ids = [aws_security_group.my-SG.id]
      tags = {
        Name = "terraform_demo"
      }
