@@ -18,4 +18,5 @@ resource "aws_instance" "EC2_instance" {
      tags = {
        Name = "terraform_demo"
      }
+     user_data = file("${path.module}/nginx.sh")
 }
