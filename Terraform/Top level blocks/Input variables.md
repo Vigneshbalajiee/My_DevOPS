@@ -4,7 +4,6 @@ variable "ec2_type" {
   default = "t2.micro"
 }
 
-```
 variable "region" {
     description = "variable to define region"
     default = "ap-south-1"  
