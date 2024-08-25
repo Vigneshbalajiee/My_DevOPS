@@ -1,0 +1,7 @@
+
+services:
+   Reactapp:
+      container_name: Reactapp
+      image: vigneshbalajiee/dev
+      ports:
+       - "80:80"
