@@ -4,7 +4,7 @@ data "aws_ami" "aws_ami" {
   owners = ["amazon"]
   filter {
     name = "name"
-    values = ["al2023-ami-*"]
+    values = ["ubuntu/images/hvm-ssd-gp3/ubuntu-noble-*"]
   }
   filter {
     name   = "root-device-type"
