@@ -1,9 +1,9 @@
 data "aws_ami" "ami_id" {
-    most_recent = true
-    owners = [ "amazon" ]
-  filter{
+  most_recent = true
+  owners = ["amazon"]
+  filter {
     name = "name"
-    value = ["ubuntu/images/hvm-ssd-gp3/ubuntu-noble-*"]
+    values = ["ubuntu/images/hvm-ssd-gp3/ubuntu-noble-*"]
   }
   filter {
     name   = "root-device-type"
@@ -13,5 +13,5 @@ data "aws_ami" "ami_id" {
     name   = "virtualization-type"
     values = ["hvm"]
   }
+  
 }
-
