@@ -17,11 +17,11 @@ resource "aws_instance" "ec2" {
     ami = data.aws_ami.ami_id.id
     instance_type = var.instance_type
     vpc_security_group_ids = [aws_security_group.my_SG_2.id]
-   /* for_each = toset(data.aws_availability_zones.zones.names)
+   for_each = toset(data.aws_availability_zones.zones.names)
     availability_zone = each.key
     tags={
       Name = "Ec2_${each.value}"
-    } */
+    } 
 }
 
 locals {
@@ -35,6 +35,6 @@ locals {
 }
 
 output "display_details" {
-  value = aws_instance.ec2.public_ip
+  value = [for instance in aws_instance.ec2: instance.public_ip]
 }
 
