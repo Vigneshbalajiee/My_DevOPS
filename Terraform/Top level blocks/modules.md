@@ -14,7 +14,7 @@ A module is essentially a container for multiple resources that are used togethe
 
 **Directory Structure:** Typically, a module is structured with its own directory. Inside this directory, we will have one or more .tf files.
 
-````
+```
 my-module/
 ├── main.tf
 ├── variables.tf
@@ -33,7 +33,8 @@ main.tf: Contains the primary resources and configuration for the module.
 Example of Using a Module
 
 ```
-***module/vpc/main.tf***
+in module/vpc/main.tf
+```
 resource "aws_vpc" "example" {
   cidr_block = var.cidr_block
   tags = {
@@ -41,21 +42,21 @@ resource "aws_vpc" "example" {
   }
 }
 
-***module/vpc/variable.tf***
+in module/vpc/variable.tf
+```
 variable "cidr_block" {
   description = "The CIDR block for the VPC"
   type        = string
 }
 
-***module/vpc/output.tf***
+in module/vpc/output.tf
+```
 output "vpc_id" {
   value = aws_vpc.example.id
 }
 ```
-
+in main.tf
 ```
-***main.tf***
-
 module "vpc" {
   source    = "./modules/vpc"
   cidr_block = "10.0.0.0/16"
@@ -68,6 +69,7 @@ output "vpc_id" {
 ```
 
 ### Key Points
+
 **Reusability:** Modules can be reused across different configurations or projects, promoting consistency and reducing duplication.
 **Encapsulation:** Modules encapsulate related resources, making your configurations more readable and easier to manage.
 **Versioning:** You can version your modules and use specific versions to ensure stability in your infrastructure.
