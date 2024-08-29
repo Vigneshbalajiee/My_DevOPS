@@ -1,8 +1,9 @@
 terraform {
   required_providers {
     aws={
-        version = "> 3.0"
         source = "hashicrop/aws"
+        version = "> 3.0"
+        
     }
 
   }
@@ -38,3 +39,4 @@ locals {
 output "display_details" {
   value = [for instance in aws_instance.ec2: instance.public_ip]
 }
+
