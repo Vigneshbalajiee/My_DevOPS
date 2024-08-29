@@ -12,9 +12,6 @@ provider "aws" {
     region = var.aws_region
   
 }
-data "aws_availability_zones" "zones" {
-}
-
 
 resource "aws_instance" "ec2" {
     ami = data.aws_ami.aws_id.id
@@ -32,7 +29,8 @@ locals {
     port = 22
     description = "enable SSH"
 },
-    {port = 80
+    {
+    port = 80
     description = "enable hhtp" }]
 }
 
