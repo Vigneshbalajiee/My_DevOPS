@@ -32,7 +32,6 @@ main.tf: Contains the primary resources and configuration for the module.
 
 Example of Using a Module
 
-```
 in module/vpc/main.tf
 ```
 resource "aws_vpc" "example" {
@@ -41,20 +40,24 @@ resource "aws_vpc" "example" {
     Name = "example-vpc"
   }
 }
-
+```
 in module/vpc/variable.tf
+
 ```
 variable "cidr_block" {
   description = "The CIDR block for the VPC"
   type        = string
 }
+```
 
 in module/vpc/output.tf
+
 ```
 output "vpc_id" {
   value = aws_vpc.example.id
 }
 ```
+
 in main.tf
 ```
 module "vpc" {
