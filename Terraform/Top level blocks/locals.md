@@ -1,0 +1,1 @@
+Locals are immutable i.e. once the values are defines it can't be changed. it is limited to modules. Can't used outside the modules.
