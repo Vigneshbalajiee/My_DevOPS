@@ -73,6 +73,6 @@ output "vpc_id" {
 
 ### Key Points
 
-**Reusability:** Modules can be reused across different configurations or projects, promoting consistency and reducing duplication.
-**Encapsulation:** Modules encapsulate related resources, making your configurations more readable and easier to manage.
-**Versioning:** You can version your modules and use specific versions to ensure stability in your infrastructure.
+- **Reusability:** Modules can be reused across different configurations or projects, promoting consistency and reducing duplication.
+- **Encapsulation:** Modules encapsulate related resources, making your configurations more readable and easier to manage.
+- **Versioning:** You can version your modules and use specific versions to ensure stability in your infrastructure.
