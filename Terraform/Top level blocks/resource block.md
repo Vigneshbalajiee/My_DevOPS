@@ -10,9 +10,9 @@ resource "aws_instance" "my_ec2_instance" {
   }
 }
 ```
-- ###***resource:*** This keyword is used to define a resource block.
-- ###***aws_instance:*** The resource type, which in this case is an AWS EC2 instance.
-- ###***my_ec2_instance:*** A user-defined name for the resource, which can be referenced later in the configuration.
-- ###***ami:*** The Amazon Machine Image (AMI) ID used to launch the instance.
-- ###***instance_type:*** The type of EC2 instance to launch.
-- ###***tags:*** Metadata tags for the resource.
+- ### ***resource:*** This keyword is used to define a resource block.
+- ### ***aws_instance:*** The resource type, which in this case is an AWS EC2 instance.
+- ### ***my_ec2_instance:*** A user-defined name for the resource, which can be referenced later in the configuration.
+- ### ***ami:*** The Amazon Machine Image (AMI) ID used to launch the instance.
+- ### ***instance_type:*** The type of EC2 instance to launch.
+- ### ***tags:*** Metadata tags for the resource.
