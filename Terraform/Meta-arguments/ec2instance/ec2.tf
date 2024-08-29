@@ -22,7 +22,7 @@ resource "aws_instance" "ec2" {
     vpc_security_group_ids = aws_security_group.my_SG_2.id
     for_each = toset(data.aws_availability_zones.zones.names)
     availability_zone = each.key
-    tags{
+    tags={
       Name = "Ec2_${each.value}"
     }
 }
