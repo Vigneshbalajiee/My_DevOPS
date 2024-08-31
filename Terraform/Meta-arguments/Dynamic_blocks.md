@@ -1,4 +1,4 @@
-Dynamic blocks in Terraform allows us to create multiple nested blocks based on a list or map of values. They are useful when we need to generate a block multiple times but the number of repetitions or content may vary.
+Dynamic blocks in Terraform allows us to create multiple nested blocks based on a ***list or map*** of values. They are useful when we need to generate a block multiple times but the number of repetitions or content may vary.
 
 ```
 locals {
