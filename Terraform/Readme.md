@@ -36,3 +36,119 @@ Terraform is an Infrastructure as Code (IaC) tool that allows you to define, man
 
 
 Understanding this lifecycle helps in efficiently managing the infrastructure and maintaining consistency across environments.
+
+
+## VAULT
+
+Terraform Vault refers to the integration of HashiCorp Vault, a secrets management tool, with Terraform, an infrastructure as code (IaC) tool. This integration allows Terraform to securely access, store, and manage sensitive information such as API keys, passwords, certificates, and other secrets.
+
+
+
+DEV mode / Prod mode  : start server in respective mode 
+
+`vault server -dev`
+
+By default if we start the vault in DEV mode then it stores all the data in INMEMORY. But in PROD mode it stores in DISK or DATABASE
+
+Store the UNSEAL key and Root token inorder to use later.
+
+Export the vault address and the Root token
+
+```
+export VAULT_ADDR="XXXXXX"
+export VAULT_TOKEN="XXXXXXXXXXXXX"
+
+```
+
+check the status of vault - `vault status`
+
+### READ/WRITE/DELETE
+
+Enable a path using Secret Engine - `vault secrets enable -path=my kv`
+
+### Write the Secret 
+
+`vault kv put my/path <key>=<value>`
+
+- ***kv*** = type of data - Key-Value
+- ***my/*** = Custom path where storing the data
+- ***put*** = to Write the data
+
+### Read the secrets
+
+`vault kv get my/path`
+
+### List all available secrets
+
+`vault secrets list`
+
+### Delete secrets
+
+`vault kv delete my/path`
+
+### Disable secrets
+
+`vault secrets disable my`
+
+
+#### Dynamic Secrets generaion
+
+Enable aws path = `vault secrets enable -path=aws aws`
+
+Set the Root Config using root Access and Secret key
+
+```
+vault write aws/config/root \
+access_key="XXXXXXX"     \
+secret_key="XXXXXXXX"     \
+region="XXXXXXX"
+```
+
+Set up the role and generate dynamic secret to that role.
+
+```
+vault write aws/roles/my-ec2-role \
+        credential_type=iam_user \
+        policy_document=-EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1426528957000",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:*"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}
+EOF
+```
+
+Generate access key and secret key for that role
+
+```
+vault read aws/creds/my-ec2-role
+```
+
+Revoke the secrets if you do not want it any longer
+
+```
+vault lease revoke <lease id>
+```
+
+
+Login Vault using below command with Root token
+` vault login` - will ask token. Provide Root token that copied initially.
+
+to revoke token
+`vault token revoke <token>`
+
+
+
+
+
+
