@@ -34,8 +34,31 @@ pipeline{
                 def dockerImage = docker.image("${IMAGE}")
                 docker.withRegistry('https://index.docker.io/v1/', "CRED"){
                     dockerImage.push()
+                    dockerImage.pull()
+                    dockerImage.run('-d')
                 }
             }
+        }
+    }
+
+    stage('update and push deplyment to git') {
+        
+        environment{
+            USER = "Vigneshbalajiee"
+            REPO = "My_DevOPS"
+        }
+        step{    
+            withCredentials([string(credentialsID: 'github', variable: 'GITHUB_TOKEN')]){
+                sh '''
+                  git config user.name "Vigneshbalajiee"
+                  BUILD_NUMBER = ${BUILD_NUMBER}
+                  sed -i "s/xxx/${BUILD_NUMBER}/g" Projects/Project3 - complete CICD/addressbook_manifest/deployment.yml
+                  git add Projects/Project3 - complete CICD/addressbook_manifest/deployment.yml
+                  git commit -m "updated yml with ${BUILD_NUMBER}"
+                  git push https://${GITHUB_TOKEN}@github.com/${USER}/${REPO} HEAD:main
+            '''
+            }
+
         }
     }
 
