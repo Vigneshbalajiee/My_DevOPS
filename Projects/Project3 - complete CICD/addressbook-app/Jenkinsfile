@@ -58,7 +58,7 @@ pipeline{
             REPO = "My_DevOPS"
         }
         steps {
-            withCredentials([string(credentialsID: 'github', variable: 'GITHUB_TOKEN')]) {
+            withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 script {
                     sh '''
                         git config user.name "Vigneshbalajiee"
