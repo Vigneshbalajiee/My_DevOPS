@@ -23,6 +23,19 @@ pipeline{
        }
     }
 
+     stages {
+        stage('Install Docker') {
+            steps {
+                script {
+                    sh '''
+                    apt-get update
+                    apt-get install -y docker.io
+                    docker --version
+                    '''
+                }
+            }
+        }
+
     stage('build and push image to hub'){
         environment{
             IMAGE = "vigneshbalajiee/addressbook:${BUILD_NUMBER}"
