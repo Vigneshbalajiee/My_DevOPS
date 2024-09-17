@@ -44,7 +44,7 @@ pipeline{
                 sh 'docker --version'
                 sh 'cd "Projects/Project3 - complete CICD/addressbook-app" && docker build -t ${IMAGE} .'
                 def dockerImage = docker.image("${IMAGE}")
-                docker.withRegistry('https://index.docker.io/v1/', 'CRED'){
+                docker.withRegistry('https://index.docker.io/v1/', 'Docker'){
                     dockerImage.push()
                
                 }
