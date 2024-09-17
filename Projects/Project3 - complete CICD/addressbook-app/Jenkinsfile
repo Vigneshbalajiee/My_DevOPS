@@ -22,9 +22,7 @@ pipeline{
         sh 'cd "Projects/Project3 - complete CICD/addressbook-app" && mvn clean install -DskipTests'
        }
     }
-
-     stages {
-        stage('Install Docker') {
+    stage('Install Docker') {
             steps {
                 script {
                     sh '''
