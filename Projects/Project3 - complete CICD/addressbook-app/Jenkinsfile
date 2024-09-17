@@ -55,6 +55,7 @@ pipeline{
     stage('update and push deployment to git') {
         environment {
             USER = "Vigneshbalajiee"
+
             REPO = "My_DevOPS"
         }
         steps {
@@ -62,6 +63,7 @@ pipeline{
                 script {
                     sh '''
                         git config user.name "Vigneshbalajiee"
+                        git config user.email "vigneshbalajiee15@gmail.com"
                         BUILD_NUMBER=${BUILD_NUMBER}
                         sed -i "s/xxx/${BUILD_NUMBER}/g" "Projects/Project3 - complete CICD/addressbook_manifest/deployment.yml"
                         git add "Projects/Project3 - complete CICD/addressbook_manifest/deployment.yml"
