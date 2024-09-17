@@ -1,4 +1,4 @@
-FROM tomcat:jre17
+FROM tomcat:9-jdk11-openjdk
 
 ARG artifact=target/*.war
 
