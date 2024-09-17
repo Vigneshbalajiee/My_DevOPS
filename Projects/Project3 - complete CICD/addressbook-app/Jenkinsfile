@@ -10,14 +10,14 @@ pipeline{
    stages{
 
     stage('checkout'){
-      step{  
+      steps{  
        sh 'echo checkedout'
        // git branch: 'main', url: 'https://github.com/Vigneshbalajiee/My_DevOPS.git'
       }  
     }
 
     stage('build the package'){
-       step{ 
+       steps{ 
         //build the war file
         sh 'cd Projects/Project3 - complete CICD/addressbook-app && mvn clean package'
        }
@@ -28,7 +28,7 @@ pipeline{
             IMAGE = "vigneshbalajiee/addressbook:${BUILD_NUMBER}"
             CRED = credentials('Docker')
         }
-        step{
+        steps{
             script{
                 sh 'cd Projects/Project3 - complete CICD/addressbook-app && docker build -t ${IMAGE} .'
                 def dockerImage = docker.image("${IMAGE}")
@@ -47,7 +47,7 @@ pipeline{
             USER = "Vigneshbalajiee"
             REPO = "My_DevOPS"
         }
-        step{    
+        steps{    
             withCredentials([string(credentialsID: 'github', variable: 'GITHUB_TOKEN')]){
                 sh '''
                   git config user.name "Vigneshbalajiee"
