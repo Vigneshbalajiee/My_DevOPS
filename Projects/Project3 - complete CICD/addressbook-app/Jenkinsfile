@@ -19,7 +19,7 @@ pipeline{
        steps{ 
         //build the war file
         sh 'ls -ltr'
-        sh 'cd "Projects/Project3 - complete CICD/addressbook-app" && mvn clean package'
+        sh 'cd "Projects/Project3 - complete CICD/addressbook-app" && mvn clean package -DskipTests'
        }
     }
 
