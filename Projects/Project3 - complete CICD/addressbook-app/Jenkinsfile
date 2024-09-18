@@ -65,7 +65,6 @@ pipeline{
                         git config user.name "Vigneshbalajiee"
                         git config user.email "vigneshbalajiee15@gmail.com"
                         BUILD_NUMBER=${BUILD_NUMBER}
-                       
                         sed -i "s|image: vigneshbalajiee/addressbook:.*|image: vigneshbalajiee/addressbook:${BUILD_NUMBER}|g" "Projects/Project3 - complete CICD/addressbook_manifest/deployment.yml"
                         git add "Projects/Project3 - complete CICD/addressbook_manifest/deployment.yml"
                         git commit -m "updated yml with ${BUILD_NUMBER}"
