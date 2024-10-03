@@ -83,7 +83,8 @@ Kubernetes orchestrates the deployment, scaling, and management of the Docker co
 
 ![Screenshot 2024-10-04 015856](https://github.com/user-attachments/assets/0c4b0312-90b4-4c50-97d8-569fa62c4699)
 
-![Screenshot 2024-10-04 020823](https://github.com/user-attachments/assets/5dab344a-a05e-4098-931e-07ccf54402cd)
+![Screenshot 2024-10-04 020823](https://github.com/user-attachments/assets/fe7db7e8-900d-4de0-921c-db34ab0aa13e)
+
 
 
 ## Conclusion
