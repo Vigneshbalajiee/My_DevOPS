@@ -55,5 +55,5 @@
 <a href="https://argo-cd.readthedocs.io/en/stable/" target="_blank" rel="noreferrer"> 
 <img src="https://www.vectorlogo.zone/logos/argoproj/argoproj-icon.svg" alt="argocd" width="40" height="40"/> </a> &nbsp;
 <a href="https://www.sonarqube.org/" target="_blank" rel="noreferrer"> 
-<img src="https://www.vectorlogo.zone/logos/sonarsource/sonarsource-icon.svg" alt="sonarqube" width="40" height="40"/> </a>
+<img src="https://www.vectorlogo.zone/logos/sonarsource/sonarsource-icon.svg" alt="sonarqube" width="40" height="40"/> </a> &nbsp;
 </p>
