@@ -52,7 +52,7 @@ Kubernetes orchestrates the deployment, scaling, and management of the Docker co
 
 
 ## CI/CD Pipeline Visualization
-![CI/CD Pipeline]("C:\Users\vigne\Downloads\demo.png")
+![demo](https://github.com/user-attachments/assets/eb29b871-ea9f-4809-ae0f-67ddb4f7dc7f)
 
 ## Steps to Run the Project
 
@@ -80,6 +80,10 @@ Kubernetes orchestrates the deployment, scaling, and management of the Docker co
 3. ArgoCD automatically deploys the updated Docker image using deployment.yml to Kubernetes.
 
 ![ArgoCd](https://github.com/user-attachments/assets/01f9ce91-c34a-40e3-9620-c253ec650cf1)
+
+![Screenshot 2024-10-04 015856](https://github.com/user-attachments/assets/0c4b0312-90b4-4c50-97d8-569fa62c4699)
+
+![Screenshot 2024-10-04 020823](https://github.com/user-attachments/assets/5dab344a-a05e-4098-931e-07ccf54402cd)
 
 
 ## Conclusion
